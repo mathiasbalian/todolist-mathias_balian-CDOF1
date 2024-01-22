@@ -18,8 +18,10 @@ def display_todos(todos):
 
 
 def add_todo(todos):
-    print('---------- Add a new todo ----------')
+    print('---------- Add a new todo (enter q to quit) ----------')
     title = input('Title: ')
+    if title == 'q':
+        return
     todo_id = len(todos) + 1
     todo = Todo(todo_id, title, False)
     todos.append(todo)
@@ -29,8 +31,10 @@ def add_todo(todos):
 
 def change_todo_status(todos):
     print('---------- Change a todo status ----------')
-    todo_id = input('Todo ID: ')
+    todo_id = input('Todo ID (enter q to quit): ')
     while not todo_id.isdigit():
+        if todo_id == 'q':
+            return
         print('Please enter a valid ID.')
         todo_id = input('Todo ID: ')
     todo_id = int(todo_id)
@@ -46,7 +50,9 @@ def change_todo_status(todos):
 
 def delete_todo(todos):
     print('---------- Delete a todo ----------')
-    todo_id = input('Todo ID: ')
+    todo_id = input('Todo ID: (enter q to quit) ')
+    if todo_id == 'q':
+        return
     while not todo_id.isdigit():
         print('Please enter a valid ID.')
         todo_id = (input('Todo ID: '))
