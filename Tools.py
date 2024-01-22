@@ -32,10 +32,8 @@ def change_todo_status(todos):
     todo_id = input('Todo ID: ')
     todo = todos[int(todo_id) - 1]
     print(f'Current status: {todo.completed}')
-    new_status = input('New status (True or False): ')
+    new_status = bool(input('New status (True or False): '))
     todo.change_status(new_status)
-    print('Todo status changed successfully.')
-    print('------------------------------------------')
 
 
 def delete_todo(todos):
@@ -48,8 +46,9 @@ def delete_todo(todos):
 
 
 def check_action(action):
-    while action not in ['1', '2', '3', '4']:
+    while action not in ['1', '2', '3', '4', '5']:
         print('Please enter a valid action.')
+        action = input('')
 
 
 
