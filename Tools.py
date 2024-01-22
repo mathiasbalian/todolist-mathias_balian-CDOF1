@@ -1,6 +1,6 @@
 from Todo import Todo
 
-#hello test
+
 def display_actions():
     print('1. List all todos')
     print('2. Add a new todo')
@@ -30,26 +30,37 @@ def add_todo(todos):
 def change_todo_status(todos):
     print('---------- Change a todo status ----------')
     todo_id = input('Todo ID: ')
-    todo = todos[int(todo_id) - 1]
-    print(f'Current status: {todo.completed}')
-    new_status = bool(input('New status (True or False): '))
-    todo.change_status(new_status)
+    while not todo_id.isdigit():
+        print('Please enter a valid ID.')
+        todo_id = input('Todo ID: ')
+    todo_id = int(todo_id)
+    for todo in todos:
+        if todo.id == todo_id:
+            print(f'Current status: {todo.completed}')
+            todo.change_status()
+            print('Todo status changed successfully.')
+            print('----------------------------------')
+        else:
+            print("No todo found with this id")
 
 
 def delete_todo(todos):
     print('---------- Delete a todo ----------')
     todo_id = input('Todo ID: ')
-    todo = todos[int(todo_id) - 1]
-    todos.remove(todo)
-    print('Todo deleted successfully.')
-    print('----------------------------------')
+    while not todo_id.isdigit():
+        print('Please enter a valid ID.')
+        todo_id = (input('Todo ID: '))
+    todo_id = int(todo_id)
+    for todo in todos:
+        if todo.id == todo_id:
+            todos.remove(todo)
+            print('Todo deleted successfully.')
+            print('----------------------------------')
+        else:
+            print("No todo found with this id")
 
 
 def check_action(action):
     while action not in ['1', '2', '3', '4', '5']:
         print('Please enter a valid action.')
         action = input('')
-
-
-
-
