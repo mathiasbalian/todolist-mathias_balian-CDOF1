@@ -33,5 +33,5 @@ python setup.py install
 
 
 ## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+If you want to contribute to the project, you can have a look at the list of [issues](https://github.com/mathiasbalian/todolist-mathias_balian-CDOF1/issues).
+Feel free to discuss with me or the other users in the comments, and don't hesitate to propose new ideas !
